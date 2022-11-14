@@ -1,11 +1,13 @@
 package account;
 
+import java.util.ArrayList;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Account {
 	
     static String initChar;
-
+    static boolean result;
+    
     
     public static String createAccountNumber(String type, int lengthAccount) {
     	
@@ -29,9 +31,24 @@ public class Account {
     }
     
     
+    
     private static int getAleatoryNumberSet(int min, int max) {
     	return ThreadLocalRandom.current().nextInt(min, max +1)	;
     	}    
+    
+    
+    
+    public static  boolean consultAcount(ArrayList<String> accountsList,String accountSearched) {
+    	
+    	if (accountsList.indexOf(accountSearched) >= 0) {
+    		result =  false;
+		} else if(accountsList.indexOf(accountSearched) < 0) {
+			result =  true;
+		}
+    	
+    	return result;
+    	
+    }
     
     };
     
