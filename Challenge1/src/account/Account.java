@@ -1,6 +1,6 @@
 package account;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Account {
@@ -9,8 +9,9 @@ public class Account {
     static boolean result;
     
     
-    public static String createAccountNumber(String type, int lengthAccount) {
-    	
+    public static String createAccountNumber(String type) {
+    	int lengthAccount = 10;
+
     	if (type == "TextoA") {
 			initChar = "54";
 		} else if (type == "TextoB") {
@@ -38,7 +39,7 @@ public class Account {
     
     
     
-    public static  boolean consultAcount(ArrayList<String> accountsList,String accountSearched) {
+    public static  boolean consultAcount(List<String> accountsList,String accountSearched) {
     	
     	if (accountsList.indexOf(accountSearched) >= 0) {
     		result =  false;
